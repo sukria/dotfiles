@@ -1,0 +1,5 @@
+" default configuration
+source ~/.dotfiles/vim/common.vim
+
+" source specialized Vim conffiles
+source ~/.dotfiles/vim/perl.vim
