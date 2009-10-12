@@ -10,6 +10,7 @@ install_vim:
 	install -m 0644 vim/vimrc $(DOTFILES)/vim/vimrc
 	install -m 0644 vim/common.vim $(DOTFILES)/vim/common.vim
 	install -m 0644 vim/perl.vim $(DOTFILES)/vim/perl.vim
+	install -m 0644 vim/ruby.vim $(DOTFILES)/vim/ruby.vim
 
 install_bash:
 	mkdir -p $(DOTFILES)/bash
