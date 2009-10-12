@@ -1,1 +1,31 @@
-This is a collection of dotfiles
+This is a collection of dotfiles that is organized to be maintainable.
+
+In order to use this collection of files, follow theses two steps:
+
+1 / Install this package
+
+Just run this command from this directory:
+
+	$ make install
+
+This will copy all the dotfiles in your ~/.dotfiles directory.
+
+
+2 / Link your dotfiles to those provided:
+
+Foreach rcfile found in your ~/.dotfiles directory, make a symlink.
+
+
+Example
+
+For instance, for using the vimrc configuration provided, just do:
+
+	$ cd dotfiles
+	$ make install
+	[...]
+	$ cd ~
+	$ ln -s dotfiles/vim/vimrc ~/.vimrc
+
+And you're done.
+
+
