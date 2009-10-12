@@ -4,3 +4,6 @@ autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab|set softtabst
 
 " F10 : enter the test directory and run the current script 
 map <F10> :!cd test && ruby ../%<CR>
+
+" .erb files are most of the time ERB html views
+autocmd BufNewFile,BufRead *.erb set ft=html.erb
