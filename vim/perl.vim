@@ -1,6 +1,9 @@
 " 4 space tabs
 autocmd FileType perl set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 
+" *.t files are Perl test scripts
+autocmd BufNewFile,BufRead *.t set ft=perl
+
 " show matching brackets
 autocmd FileType perl set showmatch
 
@@ -51,5 +54,6 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 nnoremap <silent> _d :.!perl -MO=Deparse 2>/dev/null<cr>
 vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 
-" truncate long lines 
-set tw=79
+" map a runner key
+autocmd FileType perl map <F10> :!perl -Ilib %<cr>
+
