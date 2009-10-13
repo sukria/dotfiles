@@ -4,12 +4,17 @@ autocmd FileType perl set tabstop=4|set shiftwidth=4|set expandtab|set softtabst
 " show matching brackets
 autocmd FileType perl set showmatch
 
+" line width is 80
+autocmd FileType perl set textwidth=80
+
 " show line numbers
 autocmd FileType perl set number
 
 " check perl code with :make
 autocmd FileType perl set makeprg=perl\ -Ilib\ -c\ %\ $*
 autocmd FileType perl set errorformat=%f:%l:%m
+
+" write the content of the buffer when necessary
 autocmd FileType perl set autowrite
 
 " dont use Q for Ex mode
