@@ -1,6 +1,6 @@
 [user]
-	name = YOUR_NAME
-	email = YOUR_EMAIL
+	name = Alexis Sukrieh
+	email = sukria@sukria.net
 
 [alias]
     ci = commit 
@@ -8,3 +8,4 @@
     sta = stash
     co = checkout
     br = branch
+	lg = log --graph --pretty=format:'%Cred%h%Creset %Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
