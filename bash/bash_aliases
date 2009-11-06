@@ -1,0 +1,5 @@
+alias l="ls -l"
+alias la="ls -la"
+alias ai="sudo apt-get install"
+alias as="apt-cache search"
+alias gi="sudo gem install --no-ri --no-rdoc"

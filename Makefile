@@ -15,6 +15,7 @@ install_vim:
 install_bash:
 	mkdir -p $(DOTFILES)/bash
 	install -m 0644 bash/bashrc $(DOTFILES)/bash/bashrc
+	install -m 0644 bash/bash_aliases $(DOTFILES)/bash/bash_aliases
 	install -m 0644 bash/git.sh $(DOTFILES)/bash/git.sh
 
 install_git:
