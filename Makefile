@@ -11,6 +11,8 @@ install_vim:
 	install -m 0644 vim/common.vim $(DOTFILES)/vim/common.vim
 	install -m 0644 vim/perl.vim $(DOTFILES)/vim/perl.vim
 	install -m 0644 vim/ruby.vim $(DOTFILES)/vim/ruby.vim
+	install -d $(DOTFILES)/vim/compiler
+	install -m 0644 vim/compiler/perlcritic.vim $(DOTFILES)/vim/compiler
 
 install_bash:
 	mkdir -p $(DOTFILES)/bash
