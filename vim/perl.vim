@@ -57,3 +57,5 @@ vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 " map a runner key
 autocmd FileType perl map <F10> :!perl -Ilib %<cr>
 
+" set the compiler
+autocmd FileType perl compiler perlcritic
