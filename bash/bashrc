@@ -94,4 +94,9 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-source ~/.dotfiles/bash/*.sh
+export PATH=~/.gem/ruby/1.8/bin:$PATH
+
+source ~/.dotfiles/bash/git.sh
+source ~/.dotfiles/bash/prompt.sh
+
+$PROMPT_COMMAND
