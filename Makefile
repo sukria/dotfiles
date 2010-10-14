@@ -14,6 +14,9 @@ install_vim:
 	install -d $(DOTFILES)/vim/compiler
 	install -m 0644 vim/compiler/perlcritic.vim $(DOTFILES)/vim/compiler/perlcritic.vim
 	install -m 0644 vim/compiler/perltest.vim $(DOTFILES)/vim/compiler/perltest.vim
+	install -d $(DOTFILES)/vim/plugin
+	install -m 0644 vim/plugin/fugitive.vim $(DOTFILES)/vim/plugin/fugitive.vim
+	install -m 0644 vim/plugin/vtreeexplorer.vim $(DOTFILES)/vim/plugin/vtreeexplorer.vim
 
 install_bash:
 	mkdir -p $(DOTFILES)/bash
