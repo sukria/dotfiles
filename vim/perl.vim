@@ -63,3 +63,5 @@ autocmd FileType perl map <F10> :!cover -test -coverage statement,branch,subrout
 
 " set the compiler
 autocmd FileType perl compiler perlcritic
+
+autocmd FileType perl cope
