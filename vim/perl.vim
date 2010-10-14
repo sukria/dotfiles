@@ -2,7 +2,8 @@
 autocmd FileType perl set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 
 " *.t files are Perl test scripts
-autocmd BufNewFile,BufRead *.t set ft=perl
+autocmd BufNewFile,BufRead *.t set ft=perl 
+autocmd BufNewFile,BufRead *.t compiler perltest
 
 " show matching brackets
 autocmd FileType perl set showmatch
@@ -55,7 +56,10 @@ nnoremap <silent> _d :.!perl -MO=Deparse 2>/dev/null<cr>
 vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 
 " map a runner key
-autocmd FileType perl map <F10> :!perl -Ilib %<cr>
+autocmd FileType perl map <F7> :!perlcritic --profile .perlcriticrc %<cr>
+autocmd FileType perl map <F8> :!perl -Ilib %<cr>
+" F9 is already a binding to :make (see common.vim)
+autocmd FileType perl map <F10> :!cover -test -coverage statement,branch,subroutine<cr>
 
 " set the compiler
 autocmd FileType perl compiler perlcritic
