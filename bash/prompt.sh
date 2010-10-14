@@ -6,6 +6,7 @@ _update_prompt () {
 	local red="31";
 	local green="32";
 	local yellow="33";
+	local blue="34";
 	local purple="35";
 	local cyan="36";
 	local white="37";
@@ -13,6 +14,7 @@ _update_prompt () {
 	local pre="\[\e[";
 	local suf="\]";
 
+	local e_blue="${pre}0;${blue}m$suf";
 	local e_green="${pre}0;${green}m$suf";
 	local e_purple="${pre}0;${purple}m$suf";
 	local e_cyan="${pre}0;${cyan}m$suf";
@@ -60,7 +62,28 @@ _update_prompt () {
 			branch=" $e_white$branch$e_normal"
 		fi
 	fi
-	export PS1="$ex$_prompt$branch $p ";
+
+	# color cover stats if any
+	if [ -e .last_cover_stats ]; then
+		last=$(cat .last_cover_stats)
+		if [ -e .current_cover_stats ]; then
+			current=$(cat .current_cover_stats)
+			score_is_ok=$(perl -le "print (($current >= $last) ? 1 : 0)")
+		else
+			score_is_ok='1'
+		fi
+
+		if [ "x$score_is_ok" == "x1" ]; then
+			score="$e_green$current%$e_normal "
+		else
+			score="$e_red$current / $last$e_normal "
+		fi
+		if [ "$current" == "$last" ]; then
+			score="$e_blue$current%$e_normal "
+		fi
+	fi
+
+	export PS1="$ex$_prompt$branch $score$p ";
 }
 
 dumb_prompt () {
