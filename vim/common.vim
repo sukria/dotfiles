@@ -13,6 +13,9 @@ syntax on
 set autoindent
 set smartindent
 
+" F9 is the make key
+map <F9> :make<CR>
+
 " default tabulation rules
 set tabstop=4
 set shiftwidth=4
