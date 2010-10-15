@@ -81,9 +81,18 @@ _update_prompt () {
 		if [ "$current" == "$last" ]; then
 			score="$e_blue$current%$e_normal "
 		fi
+	else
+		if [[ -e .current_cover_stats ]]; then
+			current=$(cat .current_cover_stats)
+			score="$e_white$current%$e_normal "
+		fi
 	fi
 
-	export PS1="$ex$_prompt$branch $score$p ";
+	# title
+	title="[\u@\h] \w"
+	e_title="\033]2;$title\007"
+
+	export PS1="$e_title$ex$_prompt$branch $score$p ";
 }
 
 dumb_prompt () {
