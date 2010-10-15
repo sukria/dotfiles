@@ -28,8 +28,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " vtreeExplorer options
 let treeExplVertical=1
-let treeExplWinSize=20
-let treeExplHidden=0
+let treeExplWinSize=25
 let treeExplNoList=1
 
 set mouse=a
