@@ -85,6 +85,8 @@ _update_prompt () {
 		if [[ -e .current_cover_stats ]]; then
 			current=$(cat .current_cover_stats)
 			score="$e_white$current%$e_normal "
+		else 
+			score=""
 		fi
 	fi
 
