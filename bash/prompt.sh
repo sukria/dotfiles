@@ -66,35 +66,35 @@ _update_prompt () {
 	# color cover stats if any
 	if [ -e .last_cover_stats ]; then
 		last=$(cat .last_cover_stats)
+		diff="-"
 		if [ -e .current_cover_stats ]; then
 			current=$(cat .current_cover_stats)
 			score_is_ok=$(perl -le "print (($current >= $last) ? 1 : 0)")
+			diff=$(perl -le "print ($current - $last)")
 		else
 			score_is_ok='1'
 		fi
 
 		if [ "x$score_is_ok" == "x1" ]; then
-			score="$e_green$current%$e_normal "
+			score="$e_green$current ($diff)$e_normal "
 		else
-			score="$e_red$current / $last$e_normal "
+			score="$e_bred$current ($diff)$e_normal "
 		fi
 		if [ "$current" == "$last" ]; then
-			score="$e_blue$current%$e_normal "
+			score="$e_blue$current$e_normal "
 		fi
 	else
 		if [[ -e .current_cover_stats ]]; then
 			current=$(cat .current_cover_stats)
-			score="$e_white$current%$e_normal "
+			score="$e_white$current$e_normal "
 		else 
 			score=""
 		fi
 	fi
 
 	# title
-	title="[\u@\h] \w"
-	e_title="\033]2;$title\007"
-
-	export PS1="$e_title$ex$_prompt$branch $score$p ";
+# 	e_title=$(echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007")
+	export PS1="$ex$_prompt$branch $score$p ";
 }
 
 dumb_prompt () {
