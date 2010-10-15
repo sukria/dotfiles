@@ -59,7 +59,7 @@ vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 autocmd FileType perl map <F7> :!perlcritic --profile .perlcriticrc %<cr>
 autocmd FileType perl map <F8> :!perl -Ilib %<cr>
 " F9 is already a binding to :make (see common.vim)
-autocmd FileType perl map <F10> :!cover -test -coverage statement,branch,subroutine<cr>
+autocmd FileType perl map <F10> :!~/bin/update_cover.sh<cr>
 
 " set the compiler
 autocmd FileType perl compiler perlcritic
