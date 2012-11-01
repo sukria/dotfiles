@@ -3,7 +3,7 @@ autocmd FileType perl set tabstop=4|set shiftwidth=4|set expandtab|set softtabst
 
 " *.t files are Perl test scripts
 autocmd BufNewFile,BufRead *.t set ft=perl 
-autocmd BufNewFile,BufRead *.t compiler perltest
+"autocmd BufNewFile,BufRead *.t compiler perltest
 
 " show matching brackets
 autocmd FileType perl set showmatch
@@ -61,7 +61,3 @@ autocmd FileType perl map <F8> :!perl -Ilib %<cr>
 " F9 is already a binding to :make (see common.vim)
 autocmd FileType perl map <F10> :!~/bin/update_cover.sh<cr>
 
-" set the compiler
-autocmd FileType perl compiler perlcritic
-
-autocmd FileType perl cope
