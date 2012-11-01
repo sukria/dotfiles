@@ -20,6 +20,7 @@ map <F9> :make<CR>
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 " Tip #80
 " open files to the previous line number  
