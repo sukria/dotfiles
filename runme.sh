@@ -1,11 +1,24 @@
 #!/bin/bash
 
 set -e
-set -x
 
 make install
 
-cd
-rm -f .bashrc && ln -s .dotfiles/bash/bashrc .bashrc
-rm -f .vimrc && ln -s .dotfiles/vim/vimrc .vimrc
-rm -f .gitconfig && ln -s .dotfiles/git/gitconfig .gitconfig
+rm -f ~/.bashrc && ln -vs $(pwd)/bash/bashrc ~/.bashrc
+rm -f ~/.vimrc && ln -vs $(pwd)/vim/vimrc ~/.vimrc
+rm -f ~/.gitconfig && ln -vs $(pwd)/git/gitconfig ~/.gitconfig
+
+VIMDIR="$HOME/.vim"
+
+if [ -e "$VIMDIR" ]; then
+    rm -f $VIMDIR
+fi
+
+if [ -d "$VIMDIR" ]; then
+    echo "***"
+    echo "*** WARNING: $VIMDIR exists, backing it up to $HOME/.vim.old"
+    echo "***"
+    mv $VIMDIR $HOME/.vim.old
+fi
+
+ln -vs $(pwd)/vim/vim-homedir $VIMDIR
