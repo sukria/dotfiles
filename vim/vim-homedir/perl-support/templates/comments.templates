@@ -51,7 +51,7 @@ use warnings;
 
 
 == Comments.file description pm == map:chpm, sc:d, start, noindent ==
-package |?CLASSNAME| 
+package |?CLASSNAME|;
 #ABSTRACT: <CURSOR>
 
 =head1 DESCRIPTION
@@ -70,7 +70,7 @@ use warnings;
 
 use strict;
 use warnings;
-use Test::More;                      # last test to print
+use Test::More;
 
 <CURSOR>
 

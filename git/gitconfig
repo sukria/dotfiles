@@ -8,7 +8,7 @@
     sta = stash
     co = checkout
     br = branch
-	lg = log --graph --pretty=format:'%Cred%h%Creset %Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset %Creset %s %Cgreen(%cr, %an)%Creset' --abbrev-commit --date=relative
 
 [color]
   branch = auto

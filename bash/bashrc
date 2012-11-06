@@ -100,3 +100,12 @@ source ~/.dotfiles/bash/git.sh
 source ~/.dotfiles/bash/prompt.sh
 
 $PROMPT_COMMAND
+
+source ~/perl5/perlbrew/etc/bashrc
+perlbrew use perl-5.14.1
+
+# Conf Weborama #
+export PATH=/weborama/bin:$HOME/bin:$PATH
+export WEBO_ENV=desktop
+export GIT_USER=$USER
+export CTAGS="--exclude=blib"
