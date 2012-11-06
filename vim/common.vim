@@ -32,5 +32,7 @@ let treeExplVertical=1
 let treeExplWinSize=25
 let treeExplNoList=1
 
+set tw=80
+
 set mouse=a
 set laststatus=2
