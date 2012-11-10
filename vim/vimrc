@@ -4,3 +4,6 @@ source ~/.dotfiles/vim/common.vim
 " source specialized Vim conffiles
 source ~/.dotfiles/vim/perl.vim
 source ~/.dotfiles/vim/ruby.vim
+
+set t_Co=256
+colorscheme jellybeans
