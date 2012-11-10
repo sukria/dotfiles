@@ -61,3 +61,5 @@ autocmd FileType perl map <F8> :!prove -vl %<cr>
 " F9 is already a binding to :make (see common.vim)
 autocmd FileType perl map <F10> :!~/bin/update_cover.sh<cr>
 
+" TT template files are in Mason mode for syntax highlighting
+autocmd BufNewFile,BufRead *.tt set ft=mason 
