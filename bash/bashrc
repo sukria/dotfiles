@@ -109,3 +109,6 @@ export PATH=/weborama/bin:$HOME/bin:$PATH
 export WEBO_ENV=desktop
 export GIT_USER=$USER
 export CTAGS="--exclude=blib"
+
+alias v="vim -O "
+alias gv="gvim "
