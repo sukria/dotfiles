@@ -1,6 +1,6 @@
 DOTFILES=$(HOME)/.dotfiles
 
-install: install_main install_vim install_bash install_git
+install: install_main install_bash install_git
 
 install_main:
 	mkdir -p $(DOTFILES)
