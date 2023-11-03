@@ -9,16 +9,56 @@ set incsearch
 set bg=light
 syntax on
 
-" auto-indent
-set autoindent
-set smartindent
+"Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" default tabulation rules
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+
+" Plugin 'tpope/vim-fugitive'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+"filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+filetype on
 " Tip #80
 " open files to the previous line number  
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -30,17 +70,15 @@ let treeExplWinSize=25
 let treeExplNoList=1
 
 set tw=80
-
 set mouse=a
 
 " appearance
 set t_Co=256
-colorscheme jellybeans
-helptags ~/.vim/doc
+"helptags ~/.vim/doc
 
 " Fugitive info in statusline
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " Open the file whose name is below the cursor
 " like bn but doesnt mind if the file does not exist
@@ -73,9 +111,10 @@ inoremap <C-j> <esc>/<+.\{-1,}+><cr>c/+>/e<cr>
 
 " any *.t file is a perl script
 autocmd BufNewFile,BufRead *.t set ft=perl 
+autocmd BufNewFile,BufRead *.tt set ft=php
 
 " load perl specific settings
-autocmd FileType perl source ~/.vim/ftplugin/perl.vim
+"autocmd FileType perl source ~/.vim/ftplugin/perl.vim
 
 " list all buffers with bl (buffer list)
 map bl :buffers<cr>
@@ -86,3 +125,17 @@ map rl :source %<cr>
 " paste toggle
 set pastetoggle=<F2>
 
+Plugin 'lifepillar/vim-solarized8'
+
+" auto-indent
+set autoindent
+set smartindent
+
+" default tabulation rules
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+colorscheme solarized8_flat
+set background=dark
